@@ -9,7 +9,8 @@ Baud rate is 921600.
 import serial
 import time
 
-ser = serial.Serial('COM3', 921600)
+#ser = serial.Serial('COM3', 921600) # For Windows systems
+ser = serial.Serial('/dev/ttyACM0', 921600) # For Linux systems
 
 WAIT_TIME = 0.01
 

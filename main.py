@@ -44,11 +44,13 @@ if __name__ == '__main__':
     tsc.go_pos(pos_next)
     tsc.wait_to_stop()
 
+    # Set the stage velocity to the "Measurement" value
+    tsc.set_vel(VELOCITY_MEAS)
+
     # Loop to move back and fourth
     for _ in range(NUM_TRAVELS):
         # Go to other position
         state = 1-state
         pos_next = positions[state]
-        tsc.set_vel(VELOCITY_MEAS)
         tsc.go_pos(pos_next)
         tsc.wait_to_stop()
